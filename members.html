@@ -227,6 +227,59 @@
       bottom: 0;
       letter-spacing: 1px;
     }
+
+    /* Member List Card */
+    .member-list-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .list-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1b3556;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .member-links {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .member-links h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1b3556;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .member-links a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 8px 15px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      border: 1px solid #007bff;
+      display: inline-block;
+    }
+
+    .member-links a:hover {
+      color: #0056b3;
+      border-color: #0056b3;
+    }
   </style>
 </head>
 
@@ -260,12 +313,37 @@
   <div class="main-section">
     <div class="section-title">Group Members</div>
 
+    <!-- Member List Card -->
+    <div class="member-list-card">
+      <div class="list-title">Quick Navigation</div>
+      <div class="member-links">
+        <div class="current-members-section">
+          <h3>Current Members</h3>
+          <a href="#darren-fayne">Darren Fayne</a>
+          <a href="#ivan-cmelo">Ivan Čmelo</a>
+          <a href="#shubhangi-kandwal">Shubhangi Kandwal</a>
+          <a href="#chao-chen">Chao Chen</a>
+          <a href="#abdirahman-ali">Abdirahman Ali</a>
+          <a href="#oisin-keating">Oisín Keating Mac Dermott</a>
+          <a href="#fearghal-twomey">Fearghal Twomey</a>
+          <a href="#amr-elmahi">Amr Elmahi</a>
+        </div>
+        <div class="former-members-section">
+          <h3>Former Members</h3>
+          <a href="#alex-pegeeva">Alex Pegeeva</a>
+          <a href="#aoife-oneill">Aoife O'Neill</a>
+          <a href="#cian-loughlin">Cian Loughlin</a>
+          <a href="#connor-barrett">Connor Barrett</a>
+        </div>
+      </div>
+    </div>
+
     <!-- Current Members Section -->
     <div class="section-subtitle">Current Members</div>
 
     <!-- Darren Fayne -->
-    <div class="member-profile">
-      <img src="images/currentpng/Darren.png" alt="Darren Fayne">
+    <div class="member-profile" id="darren-fayne">
+      <img src="images/memberpng/Darren.png" alt="Darren Fayne">
       <div class="member-name">Darren Fayne</div>
       <div class="member-role">Principal Investigator</div>
       <div class="tabs">
@@ -290,8 +368,8 @@
     </div>
 
     <!-- Ivan Čmelo -->
-    <div class="member-profile">
-      <img src="images/currentpng/Ivan.png" alt="Ivan Čmelo">
+    <div class="member-profile" id="ivan-cmelo">
+      <img src="images/memberpng/Ivan.png" alt="Ivan Čmelo">
       <div class="member-name">Ivan Čmelo</div>
       <div class="member-role">Postdoctoral Researcher</div>
       <div class="tabs">
@@ -315,8 +393,8 @@
     </div>
 
     <!-- Shubhangi Kandwal -->
-    <div class="member-profile">
-      <img src="images/currentpng/Shubhi.png" alt="Shubhangi Kandwal">
+    <div class="member-profile" id="shubhangi-kandwal">
+      <img src="images/memberpng/Shubhi.png" alt="Shubhangi Kandwal">
       <div class="member-name">Shubhangi Kandwal</div>
       <div class="member-role">4th-Year PhD Candidate in Biochemistry</div>
       <div class="tabs">
@@ -348,8 +426,8 @@
     </div>
 
     <!-- Chao Chen -->
-    <div class="member-profile">
-      <img src="images/currentpng/Chao.png" alt="Chao Chen">
+    <div class="member-profile" id="chao-chen">
+      <img src="images/memberpng/Chao.png" alt="Chao Chen">
       <div class="member-name">Chao Chen</div>
       <div class="member-role">Application Developer</div>
       <div class="tabs">
@@ -369,8 +447,8 @@
     </div>
 
     <!-- Abdirahman Ali -->
-    <div class="member-profile">
-      <img src="images/currentpng/Abdi.png" alt="Abdirahman Ali">
+    <div class="member-profile" id="abdirahman-ali">
+      <img src="images/memberpng/generic_silhouette.jpg" alt="Abdirahman Ali">
       <div class="member-name">Abdirahman Ali</div>
       <div class="member-role">PhD Candidate</div>
       <div class="tabs">
@@ -386,8 +464,8 @@
     </div>
 
     <!-- Oisín Keating Mac Dermott -->
-    <div class="member-profile">
-      <img src="images/currentpng/Oisin.png" alt="Oisín Keating Mac Dermott">
+    <div class="member-profile" id="oisin-keating">
+      <img src="images/memberpng/Oisin.png" alt="Oisín Keating Mac Dermott">
       <div class="member-name">Oisín Keating Mac Dermott</div>
       <div class="member-role">3rd Year INTRA Student</div>
       <div class="tabs">
@@ -414,8 +492,8 @@
     </div>
 
     <!-- Fearghal Twomey -->
-    <div class="member-profile">
-      <img src="images/currentpng/Fearghal.png" alt="Fearghal Twomey">
+    <div class="member-profile" id="fearghal-twomey">
+      <img src="images/memberpng/generic_silhouette.jpg" alt="Fearghal Twomey">
       <div class="member-name">Fearghal Twomey</div>
       <div class="member-role">3rd Year INTRA Student</div>
       <div class="tabs">
@@ -427,8 +505,8 @@
     </div>
 
     <!-- Amr Elmahi -->
-    <div class="member-profile">
-      <img src="images/currentpng/Amr.png" alt="Amr Elmahi">
+    <div class="member-profile" id="amr-elmahi">
+      <img src="images/memberpng/Amr.png" alt="Amr Elmahi">
       <div class="member-name">Amr Elmahi</div>
       <div class="member-role">Undergraduate Student Researcher/Intern</div>
       <div class="tabs">
@@ -464,32 +542,32 @@
     <div class="section-subtitle">Former Members</div>
 
     <!-- Alex Pegeeva -->
-    <div class="member-profile">
-      <img src="images/formerpng/Alex.png" alt="Alex Pegeeva">
+    <div class="member-profile" id="alex-pegeeva">
+      <img src="images/memberpng/Alex.png" alt="Alex Pegeeva">
       <div class="member-name">Alex Pegeeva</div>
       <div class="member-role">4th Year Project Student</div>
       <div class="member-dates">2024-25</div>
     </div>
 
     <!-- Aoife O'Neill -->
-    <div class="member-profile">
-      <img src="images/formerpng/Aoife.png" alt="Aoife O'Neill">
+    <div class="member-profile" id="aoife-oneill">
+      <img src="images/memberpng/Aoife.png" alt="Aoife O'Neill">
       <div class="member-name">Aoife O'Neill</div>
       <div class="member-role">4th Year Project Student</div>
       <div class="member-dates">2024-25</div>
     </div>
 
     <!-- Cian Loughlin -->
-    <div class="member-profile">
-      <img src="images/formerpng/Cian.png" alt="Cian Loughlin">
+    <div class="member-profile" id="cian-loughlin">
+      <img src="images/memberpng/Cian.png" alt="Cian Loughlin">
       <div class="member-name">Cian Loughlin</div>
       <div class="member-role">4th Year Project Student</div>
       <div class="member-dates">2024-25</div>
     </div>
 
     <!-- Connor Barrett -->
-    <div class="member-profile">
-      <img src="images/formerpng/Connor.png" alt="Connor Barrett">
+    <div class="member-profile" id="connor-barrett">
+      <img src="images/memberpng/Connor.png" alt="Connor Barrett">
       <div class="member-name">Connor Barrett</div>
       <div class="member-role">4th Year Project Student</div>
       <div class="member-dates">2024-25</div>

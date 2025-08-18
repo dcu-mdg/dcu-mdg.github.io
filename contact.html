@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MDG - Contact</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .top-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .initials {
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle-grey {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .navbar-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-line {
+      flex: 1;
+      height: 4px;
+      background: #888;
+      min-width: 30px;
+      border: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 3;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      background-color: #fff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .contact-section {
+      max-width: 980px;
+      margin: 60px auto;
+      display: flex;
+      background: none;
+      box-sizing: border-box;
+      gap: 0;
+      min-height: 400px;
+    }
+
+    .contact-left,
+    .contact-right {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+      padding: 36px 32px 40px 32px;
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .contact-left {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-right: 0;
+    }
+
+    .contact-right {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-left: 0;
+    }
+
+    .vertical-divider {
+      width: 1.5px;
+      background: #ddd;
+      margin: 0 34px;
+      border-radius: 2px;
+      min-height: 320px;
+      align-self: stretch;
+    }
+
+    .contact-title {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+      color: #1b3556;
+      text-align: left;
+      width: 100%;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 4px;
+      margin-top: 18px;
+      font-size: 15px;
+      color: #223;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 4px;
+      font-size: 16px;
+      border: 1.2px solid #ccc;
+      border-radius: 6px;
+      background: #fafafa;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .contact-form textarea {
+      min-height: 90px;
+      max-height: 220px;
+      font-size: 16px;
+    }
+
+    .contact-form button[type=submit] {
+      margin-top: 20px;
+      background: #1b3556;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 11px 34px;
+      font-size: 17px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.07);
+    }
+
+    .contact-form button[type=submit]:hover {
+      background: #284981;
+    }
+
+    .contact-address-title,
+    .social-title {
+      font-size: 21px;
+      font-weight: bold;
+      color: #1b3556;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+      margin-bottom: 13px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .contact-address-body {
+      font-size: 17px;
+      color: #222;
+      margin-bottom: 26px;
+      width: 100%;
+      line-height: 1.5;
+      word-break: break-word;
+      text-align: left;
+    }
+
+    /* Social Links removed */
+    .social-links {
+      display: flex;
+      gap: 17px;
+      margin-top: 7px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #f4f4f4;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      transition: background 0.22s;
+      color: #555;
+      font-size: 21px;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+    }
+
+    .social-link:hover {
+      background: #e0e0e0;
+      color: #1b3556;
+    }
+
+    @media (max-width: 950px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .vertical-divider {
+        display: none;
+      }
+
+      .contact-left,
+      .contact-right {
+        width: 100%;
+        margin: 0 0 0 0;
+        border-radius: 16px;
+        margin-bottom: 22px;
+      }
+
+      .contact-right {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-section {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .contact-left,
+      .contact-right {
+        padding: 18px 4vw 18px 4vw;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background: #ededed;
+      color: #888;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 0 10px 0;
+      position: relative;
+      bottom: 0;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-section">
+    <div class="initials">
+      <a href="index.html" style="color: inherit; text-decoration: none;">MDG</a>
+    </div>
+    <div class="subtitle">Molecular Design Group</div>
+    <div class="subtitle-grey">Dublin City University</div>
+  </div>
+
+  <div class="navbar-bar">
+    <div class="navbar-line"></div>
+
+    <nav class="navbar">
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="join.html">Join</a>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Group</a>
+        <div class="dropdown-content">
+          <a href="current.html">Current Members</a>
+          <a href="former.html">Former Members</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar-line"></div>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-left">
+      <div class="contact-title">Contact Us</div>
+      <form class="contact-form" action="mailto:darren.p.fayne@dcu.ie" method="POST" enctype="text/plain">
+        <label for="contact-name">Name <span style="color:#b32d2e;">*</span></label>
+        <input type="text" id="contact-name" name="name" required placeholder="Your name">
+        <label for="contact-email">Email <span style="color:#b32d2e;">*</span></label>
+        <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+        <label for="contact-message">Message <span style="color:#b32d2e;">*</span></label>
+        <textarea id="contact-message" name="message" required placeholder="Your message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="contact-right">
+      <div class="contact-address-title">Or Contact</div>
+      <div class="contact-address-body">
+        Darren Fayne BSc, M.Ed. PhD, FICI<br>
+        Assistant Professor in Computational Chemistry,<br>
+        Molecular Design Group,<br>
+        School of Chemical Sciences,<br>
+        DCU Life Sciences Institute,<br>
+        Dublin City University,<br>
+        Glasnevin,<br>
+        Ireland<br>
+		<a href="mailto:darren.p.fayne@dcu.ie?subject=Contact&body=Inquiry">Email</a><br>
+      </div>
+
+      <!-- Social Links removed, replaced with image -->
+      <div class="social-links">
+        <img src="images/contactpng/contact.png" alt="Contact Image" style="max-width: 100%; height: auto; border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+
+  <footer class="bottom-bar">
+    &copy; 2025 Molecular Design Group
+  </footer>
+</body>
+
+</html>

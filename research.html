@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>MDG - Research</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .top-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .initials {
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle-grey {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .navbar-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-line {
+      flex: 1;
+      height: 4px;
+      background: #888;
+      min-width: 30px;
+      border: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 3;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      background-color: #fff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .main-section {
+      max-width: 1000px;
+      margin: 60px auto 0 auto;
+      padding: 0 20px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* Research block with image and text */
+    .research-block {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      transition: opacity 0.8s cubic-bezier(.23, 1.01, .32, 1), transform 0.7s cubic-bezier(.23, 1.01, .32, 1);
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+
+    .research-block.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .research-block.right {
+      transform: translateX(80px);
+    }
+
+    .research-block.right.visible {
+      transform: translateX(0);
+    }
+
+    .research-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+      flex: 1;
+    }
+
+    .research-title {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      margin-top: 0;
+      color: #1b3556;
+    }
+
+    .block-image {
+      max-width: 40%; /* Limit the image size */
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-left: 20px; /* Add margin between text and image */
+    }
+
+    @media (max-width: 780px) {
+      .main-section {
+        gap: 30px;
+      }
+
+      .research-block {
+        padding: 18px 7vw 16px 7vw;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .block-image {
+        max-width: 80%; /* Make the image more responsive */
+        margin-bottom: 20px;
+      }
+
+      .research-block.right {
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .research-block {
+        padding: 13px 3vw !important;
+      }
+
+      .block-image {
+        width: 100%; /* Ensure images fill the width on smaller screens */
+      }
+
+      .main-section {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background: #ededed;
+      color: #888;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 0 10px 0;
+      position: relative;
+      bottom: 0;
+      letter-spacing: 1px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="top-section">
+    <div class="initials">
+      <a href="index.html" style="color: inherit; text-decoration: none;">MDG</a>
+    </div>
+    <div class="subtitle">Molecular Design Group</div>
+    <div class="subtitle-grey">Dublin City University</div>
+  </div>
+
+  <div class="navbar-bar">
+    <div class="navbar-line"></div>
+
+    <nav class="navbar">
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="join.html">Join</a>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Group</a>
+        <div class="dropdown-content">
+          <a href="current.html">Current Members</a>
+          <a href="former.html">Former Members</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar-line"></div>
+
+  </div>
+
+  <div class="main-section">
+
+    <!-- First research block with image -->
+    <div class="research-block">
+      <div class="research-text">
+        <div class="research-title">Methodology Development</div>
+        <div class="research-text">
+          CADD tools developed by the group include the recently published <a href="https://pubs.acs.org/doi/10.1021/acsomega.3c05207">Datapype</a> and
+          <a href="https://www.sciencedirect.com/science/article/pii/S1093326322001073">MoPBS</a>. Currently, other novel pharmacophore searching software and a target
+          fishing platform are close to completion.
+        </div>
+      </div>
+      <img class="block-image" src="images/researchpng/Pype.png" alt="MDG">
+    </div>
+
+    <!-- Second research block with image -->
+    <div class="research-block right">
+      <div class="research-text">
+        <div class="research-title">CADD application</div>
+        <div class="research-text">
+          Darren has lead a number of successful small molecule hit-finding research
+          programmes against various protein targets including – androgen receptor (AR),
+          farnesoid X receptor (FXR), peroxisome proliferating activated receptor gamma
+          (PPARγ), glucocorticoid receptor (GR), estrogen receptor α and β (ER), tubulin,
+          caspase 6, macrophage migration inhibitory factor (MIF), toll-like receptor 4/myeloid
+          differentiation 2 (TLR4/MD2), plasmepsins, IL-17, Viral infectivity factor (Vif),
+          Lipoprotein signal peptidase (LspA), cytochrome P450, SARS-CoV-2 nsp3, SARS-
+          CoV-2 nsp13, along with novel compounds demonstrating in vivo efficacy against
+          malignant pleural mesothelioma, lung cancer and sepsis.
+        </div>
+      </div>
+      <img class="block-image" src="images/researchpng/MobPS.png" alt="MDG">
+    </div>
+
+    <!-- Third research block with image -->
+    <div class="research-block">
+      <div class="research-text">
+        <div class="research-text">
+          Mapping of the X-ray structure of tubulin co-crystallised with DAMA-colchicine (PDB
+          entry 1SA0) and the best ranked docked pose of the 3S,4R enantiomer 17g, with a
+          pharmacophore created by MoPBS. The ligand and protein colouring is explained in
+          the legend above. The pharmacophore feature colours are HBA, light blue; HBD,
+          pink; aromatic, orange; and hydrophobic, green [Wang, S. et al., Pharmaceuticals
+          2023, 16 (7). <a href="https://doi.org/10.3390/ph16071000">https://doi.org/10.3390/ph16071000</a>.]
+        </div>
+      </div>
+      <img class="block-image" src="images/researchpng/Xraytubulin.png" alt="MDG">
+    </div>
+
+  </div>
+
+  <footer class="bottom-bar">
+    &copy; 2025 Molecular Design Group
+  </footer>
+
+  <script>
+    // Slide-in effect for research blocks
+    document.addEventListener("DOMContentLoaded", function () {
+      const blocks = document.querySelectorAll('.research-block');
+
+      const config = { threshold: 0.18 };
+
+      function revealBlock(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(revealBlock, config);
+
+      blocks.forEach(block => observer.observe(block));
+    });
+  </script>
+
+</body>
+
+</html>

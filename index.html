@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>MDG - Molecular Design Group</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .top-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .initials {
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle-grey {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .navbar-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-line {
+      flex: 1;
+      height: 4px;
+      background: #888;
+      min-width: 30px;
+      border: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 3;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      background-color: #fff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main content section */
+    .main-section {
+      max-width: 1100px;
+      margin: 60px auto 0 auto;
+      padding: 0 20px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .content-block {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 40px 32px;
+    }
+
+    .content-block:nth-child(even) {
+      flex-direction: row-reverse;
+      background: #f3f3f3;
+    }
+
+    .block-image {
+      flex: 1 1 320px;
+      max-width: 320px;
+      min-width: 180px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      object-fit: cover;
+      height: 200px;
+      background: #e0e0e0;
+    }
+
+    .block-text {
+      flex: 2 1 0;
+      font-size: 19px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .main-section {
+        gap: 40px;
+      }
+      .content-block {
+        flex-direction: column;
+        gap: 24px;
+        padding: 28px 12px;
+      }
+      .content-block:nth-child(even) {
+        flex-direction: column;
+      }
+      .block-image {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+      }
+    }
+
+    /* Footer bar */
+    .bottom-bar {
+      width: 100%;
+      background: #ededed;
+      color: #888;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 0 10px 0;
+      position: relative;
+      bottom: 0;
+      letter-spacing: 1px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="top-section">
+    <div class="initials">
+      <a href="index.html" style="color: inherit; text-decoration: none;">MDG</a>
+    </div>
+    <div class="subtitle">Molecular Design Group</div>
+    <div class="subtitle-grey">Dublin City University</div>
+  </div>
+
+  <div class="navbar-bar">
+    <div class="navbar-line"></div>
+
+    <nav class="navbar">
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="join.html">Join</a>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Group</a>
+        <div class="dropdown-content">
+          <a href="current.html">Current Members</a>
+          <a href="former.html">Former Members</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar-line"></div>
+
+  </div>
+
+  <div class="main-section">
+
+    <div class="content-block">
+      <img class="block-image" src="images/indexpng/MDG.png" alt="MDG">
+      <div class="block-text">
+        <strong>The Molecular Design Group</strong><br>
+        The Molecular Design Group (MDG), is based in the School of Chemical Sciences, at Dublin City University (DCU), Ireland. We are interested in creating and applying computer-aided drug design (CADD) technologies to discover and develop novel small molecules that modulate the activity of proteins involved in disease pathogenesis
+      </div>
+    </div>
+
+    <div class="content-block">
+      <img class="block-image" src="images/indexpng/Group.png" alt="The Group">
+      <div class="block-text">
+        <strong>The Group</strong><br>
+        The MDG currently consists of three PhD candidates, one Research Ireland funded postdoctoral researcher and multiple visiting MSc and BSc project students.
+      </div>
+    </div>
+
+    <div class="content-block">
+      <img class="block-image" src="images/indexpng/pype.png" alt="Infrastructure">
+      <div class="block-text">
+        <strong>Infrastructure</strong><br>
+        Our in-house primary infrastructure consists of heterogeneous servers with ~400 CPU cores and multiple NVIDIA GPUs. We are intereseted in working with potential collaborators intent on discovering small molecules with the potential to treat disease.
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="bottom-bar">
+    &copy; 2025 Molecular Design Group
+  </footer>
+
+</body>
+
+</html>

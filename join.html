@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>MDG - Join the Group</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .top-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .initials {
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle-grey {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .navbar-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-line {
+      flex: 1;
+      height: 4px;
+      background: #888;
+      min-width: 30px;
+      border: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 3;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    .dropdown-content a {
+      color: #000;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      background-color: #fff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .main-section {
+      max-width: 1100px;
+      margin: 60px auto 0 auto;
+      padding: 0 20px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .content-block {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      padding: 40px 32px;
+    }
+
+    .content-block:nth-child(even) {
+      flex-direction: row-reverse;
+      background: #f3f3f3;
+    }
+
+    .block-text {
+      flex: 2 1 0;
+      font-size: 19px;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .main-section {
+        gap: 40px;
+      }
+
+      .content-block {
+        flex-direction: column;
+        gap: 24px;
+        padding: 28px 12px;
+      }
+
+      .content-block:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background: #ededed;
+      color: #888;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 0 10px 0;
+      position: relative;
+      bottom: 0;
+      letter-spacing: 1px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="top-section">
+    <div class="initials">
+      <a href="index.html" style="color: inherit; text-decoration: none;">MDG</a>
+    </div>
+    <div class="subtitle">Molecular Design Group</div>
+    <div class="subtitle-grey">Dublin City University</div>
+  </div>
+
+  <div class="navbar-bar">
+    <div class="navbar-line"></div>
+
+    <nav class="navbar">
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="join.html">Join</a>
+
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Group</a>
+        <div class="dropdown-content">
+          <a href="current.html">Current Members</a>
+          <a href="former.html">Former Members</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar-line"></div>
+
+  </div>
+
+  <div class="main-section">
+
+    <!-- Join the Group Section -->
+    <div class="content-block">
+      <div class="block-text">
+        <strong>Join the Group</strong><br>
+		We are interested in working with very promising potential PhD students and
+Postdoctoral researchers with a deep interest in CADD – either code development or
+application.<br><br>
+We are also happy to host, virtually or on-site, visiting research students currently
+studying a relevant undergraduate bachelor’s degree or master’s programme.<br><br>
+If you are interested in applying for funding to join the group please <a href="contact.html">contact Darren</a>
+with a brief CV, cover E-mail detailing research interests and how your interests map
+to those of the group. As these fellowships are highly competitive, prospective
+applicants should get in touch well in advance of the deadline.
+      </div>
+    </div>
+
+    <!-- PhD Students Section -->
+    <div class="content-block">
+      <div class="block-text">
+        <strong>PhD Students</strong><br>
+        Government of Ireland Postgraduate Scholarship Programme covering stipend, fees
+and consumables. Closed but expected deadline October 2025. <a href="https://research.ie/funding/goipg/">Details Here</a>.<br><br>
+
+Enterprise Partnership Scheme (Postgraduate), covering stipend, fees and
+consumables. Currently closed. <a href="https://www.researchireland.ie/funding/enterprise-partnership-postgraduate/">Details Here</a>.<br><br>
+
+Hong Kong scholarship for excellence scheme. Expected deadline December 2025
+<a href="https://hkses.edb.gov.hk/en/index.html">Details Here</a>.
+	  </div>
+    </div>
+
+    <!-- Postdoctoral Researchers Section -->
+    <div class="content-block">
+      <div class="block-text">
+        <strong>Postdoctoral Researchers</strong><br>
+        Funding opportunities include:
+Marie Skłodowska-Curie Postdoctoral Fellowships (MSCA PF). Deadline 10 th
+September 2025. <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships/6-steps-to-prepare-your-application">Details Here</a> and <a href="https://euraxess.ec.europa.eu/jobs/325649">Advert Here</a>.<br><br>
+
+Government of Ireland Postdoctoral Fellowship Programme. Expected deadline
+October 2025. <a href="https://research.ie/funding/goipd/">Details Here</a>.<br><br>
+
+Research Ireland Enterprise Fellowship. Deadline July 2025. <a href="https://www.researchireland.ie/funding/enterprise-fellowships/">Details Here</a>.<br><br>
+
+Human Frontier Science Program Postdoctoral Fellowships. Closed. Expected
+deadline LOI: May 2026, Expected deadline proposal: September 2026. <a href="https://www.hfsp.org/funding/hfsp-funding/postdoctoral-fellowships">Details Here</a>.
+	  </div>
+    </div>
+
+  </div>
+
+  <footer class="bottom-bar">
+    &copy; 2025 Molecular Design Group
+  </footer>
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>MDG - Gallery</title>
+  <link rel="icon" type="image/png" href="images/indexpng/MDG.png">
   <style>
 
     body {
@@ -12,6 +13,17 @@
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #222;
+    }
+
+    .header-logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .top-section {
@@ -216,6 +228,10 @@
 </head>
 
 <body>
+
+  <div class="header-logo">
+    <img src="images/indexpng/MDG.png" alt="MDG Logo">
+  </div>
 
   <div class="top-section">
     <div class="initials">

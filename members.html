@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MDG - Members</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .top-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .initials {
+      font-size: 72px;
+      font-weight: bold;
+      letter-spacing: 10px;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle-grey {
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .navbar-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .navbar-line {
+      flex: 1;
+      height: 4px;
+      background: #888;
+      min-width: 30px;
+      border: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+      background: #f9f9f9;
+      padding: 0 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    .main-section {
+      max-width: 1000px;
+      margin: 60px auto 0 auto;
+      padding: 0 20px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #1b3556;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    .section-divider {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #1b3556, transparent);
+      margin: 40px 0;
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1b3556;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* Member profile layout */
+    .member-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      padding: 32px 24px;
+      transition: opacity 0.8s cubic-bezier(.23, 1.01, .32, 1), transform 0.7s cubic-bezier(.23, 1.01, .32, 1);
+    }
+
+    .member-profile.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .member-profile img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .member-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #1b3556;
+    }
+
+    .member-role {
+      font-size: 18px;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    .member-dates {
+      font-size: 16px;
+      color: #666;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .tabs .tab {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .tabs .tab-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 780px) {
+      .main-section {
+        gap: 30px;
+      }
+
+      .member-profile {
+        padding: 18px 7vw 16px 7vw;
+        text-align: center;
+      }
+
+      .member-profile img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .member-profile img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .bottom-bar {
+      width: 100%;
+      background: #ededed;
+      color: #888;
+      font-size: 15px;
+      text-align: center;
+      padding: 12px 0 10px 0;
+      position: relative;
+      bottom: 0;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-section">
+    <div class="initials">
+      <a href="index.html" style="color: inherit; text-decoration: none;">MDG</a>
+    </div>
+    <div class="subtitle">Molecular Design Group</div>
+    <div class="subtitle-grey">Dublin City University</div>
+  </div>
+
+  <div class="navbar-bar">
+    <div class="navbar-line"></div>
+
+    <nav class="navbar">
+      <a href="news.html">News</a>
+      <a href="research.html">Research</a>
+      <a href="join.html">Join</a>
+      <a href="members.html">Members</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="navbar-line"></div>
+  </div>
+
+  <div class="main-section">
+    <div class="section-title">Group Members</div>
+
+    <!-- Current Members Section -->
+    <div class="section-subtitle">Current Members</div>
+
+    <!-- Darren Fayne -->
+    <div class="member-profile">
+      <img src="images/currentpng/Darren.png" alt="Darren Fayne">
+      <div class="member-name">Darren Fayne</div>
+      <div class="member-role">Principal Investigator</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Darren holds an honours degree in Applied Chemistry and PhD in computational and organic chemistry from Dublin City University. He has an M.Ed. in Higher Education from Trinity College Dublin. He worked for two years at Solvay Pharmaceuticals in Hannover, Germany as a molecular designer from March 2003. While with the Computer-Aided Drug Design Group he focused on two main therapeutic areas of research: cardiovascular disease and gastroenterology (IBS/IBD). In July 2005 Darren joined the Molecular Design Group in Trinity College Dublin as a Senior Research Fellow. In January 2024 Darren started a permanent position as an Assistant Professor (above bar) in Computational Chemistry in DCU.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Projects</div>
+          <div class="tab-content">Darren has lead a number of successful small molecule hit-finding research programmes against various protein targets including – androgen receptor (AR), farnesoid X receptor (FXR), peroxisome proliferating activated receptor gamma (PPARγ), glucocorticoid receptor (GR), estrogen receptor α and β (ER), tubulin, caspase 6, macrophage migration inhibitory factor (MIF), toll-like receptor 4/myeloid differentiation 2 (TLR4/MD2), plasmepsins, IL-17, Viral infectivity factor (Vif), Lipoprotein signal peptidase (LspA), cytochrome P450, SARS-CoV-2 nsp3, SARS-CoV-2 nsp13, along with novel compounds demonstrating in vivo efficacy against malignant pleural mesothelioma, lung cancer and sepsis.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Media</div>
+          <div class="tab-content">
+            <a href="https://www.researchgate.net/profile/Darren-Fayne">ResearchGate</a><br>
+            <a href="https://scholar.google.no/citations?user=gWoa4k0AAAAJ&hl=en">Google Scholar</a><br>
+            <a href="https://www.linkedin.com/in/darren-fayne-26782b99/?originalSubdomain=ie">LinkedIn</a><br>
+            <a href="https://orcid.org/0000-0003-2417-5406">ORCID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ivan Čmelo -->
+    <div class="member-profile">
+      <img src="images/currentpng/Ivan.png" alt="Ivan Čmelo">
+      <div class="member-name">Ivan Čmelo</div>
+      <div class="member-role">Postdoctoral Researcher</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Ivan holds a Master's degree in Informatics and Chemistry from the University of Chemistry and Technology Prague (UCT Prague), and a PhD in cheminformatics from the same university. His doctoral work focused on the computational exploration of chemical space, including the development of algorithms for structure generation. His work also extended into virtual screening and synthetic accessibility estimation. Ivan has held research positions at the Czech Institute of Molecular Genetics and at the Department of Informatics and Chemistry at UCT Prague, where he has contributed to cheminformatics, forensic/data analysis and IT infrastructure development.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Projects</div>
+          <div class="tab-content">Ivan has contributed to multiple research projects spanning cheminformatics, computational drug design and chemical forensics. For his PhD, he created and screened a million-compound virtual library of potential steroid receptor ligands. He also developed the Feature Interrelation Profiling methodology for estimating compound properties based on mutual information and Kullback-Leibler divergence patterns between compound structural features in different datasets.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Media</div>
+          <div class="tab-content">
+            <a href="https://orcid.org/0000-0001-7787-8653">ORCID</a><br>
+            <a href="https://github.com/cmeloi">GitHub</a><br>
+            <a href="https://www.researchgate.net/profile/Ivan-Cmelo">ResearchGate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shubhangi Kandwal -->
+    <div class="member-profile">
+      <img src="images/currentpng/Shubhi.png" alt="Shubhangi Kandwal">
+      <div class="member-name">Shubhangi Kandwal</div>
+      <div class="member-role">4th-Year PhD Candidate in Biochemistry</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Shubhangi has completed bachelor's degree in pharmacy from Delhi Pharmaceutical Sciences and Research University, New Delhi, India, in 2019. She also graduated with M.Sc. degree in Molecular Medicine from Trinity College Dublin, Ireland, in 2020. During the master's degree, her thesis project, "Repurposing drugs for treatment of SARS-CoV-2 infection: computational design insights into mechanisms of action," was published as a research article in the Journal of Biomolecular Structure and Dynamics. In the year 2021, she was awarded the Government of Ireland Postgraduate Award by the Irish Research Council to pursue her PhD studies.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Project</div>
+          <div class="tab-content">Every virus present in nature has emerged from a common ancestral family. For example, viruses such as Zika, chikungunya, coronaviruses, the dengue virus, hepatitis viruses and more belong to a family of viruses called the Group-4 viruses. In my project, I have identified common features, i.e., common binding sites, that are present in related proteins among these viruses.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Personal Interests</div>
+          <div class="tab-content">Dancing, hiking, listening to music and travelling</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Funding Sources</div>
+          <div class="tab-content">Irish Research Council (now known as Research Ireland) GOIPG/2021/954</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Media</div>
+          <div class="tab-content">
+            <a href="https://scholar.google.com/citations?hl=en&user=ccvw6UgAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a><br>
+            <a href="https://www.linkedin.com/in/shubhangi-kandwal-507064193/">LinkedIn</a><br>
+            <a href="https://orcid.org/0000-0003-3992-5521">ORCID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chao Chen -->
+    <div class="member-profile">
+      <img src="images/currentpng/Chao.png" alt="Chao Chen">
+      <div class="member-name">Chao Chen</div>
+      <div class="member-role">Application Developer</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Chao obtained his bachelor's degree in a computer science-related field in China in 2009 and subsequently worked as a software engineer. Chao is currently employed as an application developer at Fiserv. In 2022, Chao began a part-time master's program at Dublin City University (DCU), and in 2024, he commenced his final project under the supervision of Assistant Professor Darren.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Project</div>
+          <div class="tab-content">Chao's research focuses on distributed graph algorithms, which are based on the principle of "thinking like a vertex." Currently, Chao is developing a distributed application for pharmacophore mapping, matching, and virtual screening.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Personal Interests</div>
+          <div class="tab-content">Chao is particularly interested in application of distributed graph processing, knowledge graphs, and graph neural networks.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Abdirahman Ali -->
+    <div class="member-profile">
+      <img src="images/currentpng/Abdi.png" alt="Abdirahman Ali">
+      <div class="member-name">Abdirahman Ali</div>
+      <div class="member-role">PhD Candidate</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Abdirahman Ali holds an Honours degree in Chemical and Pharmaceutical Sciences, having graduated from Dublin City University in 2022. Following his undergraduate studies, he worked for two years as a chemist at Astellas Pharma Inc., where he gained extensive hands-on experience with key laboratory instrumentation and analytical techniques, including HPLC, Gas chromatography, UV-Vis spectroscopy, IR spectroscopy, and Karl Fischer titration.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Project</div>
+          <div class="tab-content">Motivated by a long-standing passion for computational chemistry, Abdirahman returned to academia and is currently pursuing a PhD under the supervision of Dr. Darren Fayne at Dublin City University. His doctoral research focuses with aid of computational drug design the investigation of potential small-molecule inhibitors targeting the androgen receptor (AR), a key protein implicated in the progression of prostate cancer.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oisín Keating Mac Dermott -->
+    <div class="member-profile">
+      <img src="images/currentpng/Oisin.png" alt="Oisín Keating Mac Dermott">
+      <div class="member-name">Oisín Keating Mac Dermott</div>
+      <div class="member-role">3rd Year INTRA Student</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Oisín is a 3rd Year Chemistry and Artificial Intelligence from Dublin. He is completing a research project with the Group as part of his course placement. Oisín has a background in emergency medical service and bartending.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Project</div>
+          <div class="tab-content">Oisín is currently developing two machine learning models to predict Distribution and Toxicity properties of small molecules as part of his work with the Molecular Design Group.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Personal Interests</div>
+          <div class="tab-content">Caving & Scuba diving</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Media</div>
+          <div class="tab-content">
+            <a href="https://www.linkedin.com/in/oisin-keating-mac-dermott-919315317/">LinkedIn</a><br>
+            <a href="https://x.com/oisinkmd1">X</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fearghal Twomey -->
+    <div class="member-profile">
+      <img src="images/currentpng/Fearghal.png" alt="Fearghal Twomey">
+      <div class="member-name">Fearghal Twomey</div>
+      <div class="member-role">3rd Year INTRA Student</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">Fearghal is a 3rd Year Chemistry student completing a research project with the Group as part of his course placement.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amr Elmahi -->
+    <div class="member-profile">
+      <img src="images/currentpng/Amr.png" alt="Amr Elmahi">
+      <div class="member-name">Amr Elmahi</div>
+      <div class="member-role">Undergraduate Student Researcher/Intern</div>
+      <div class="tabs">
+        <div class="tab">
+          <div class="tab-title">Background</div>
+          <div class="tab-content">I am a 2nd year undergraduate chemistry student visiting from Trinity College on a RISE placement. I have a strong interest in medicinal and pharmaceutical chemistry and aspire to work in the pharmaceutical industry.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Research Project</div>
+          <div class="tab-content">I am currently working on a project involving CADD (Computer Aided Drug Design) to design a dual inhibitor for TOP1 and PARP1 which would theoretically have anti-cancer properties.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Personal Interests</div>
+          <div class="tab-content">I have a keen interest in fitness and lift regularly and I am also interested in fashion and music.</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Funding Sources</div>
+          <div class="tab-content">Royal Society of Chemistry/RISE</div>
+        </div>
+        <div class="tab">
+          <div class="tab-title">Media</div>
+          <div class="tab-content">
+            <a href="https://www.linkedin.com/in/amr-elmahi-029131333/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Former Members Section -->
+    <div class="section-subtitle">Former Members</div>
+
+    <!-- Alex Pegeeva -->
+    <div class="member-profile">
+      <img src="images/formerpng/Alex.png" alt="Alex Pegeeva">
+      <div class="member-name">Alex Pegeeva</div>
+      <div class="member-role">4th Year Project Student</div>
+      <div class="member-dates">2024-25</div>
+    </div>
+
+    <!-- Aoife O'Neill -->
+    <div class="member-profile">
+      <img src="images/formerpng/Aoife.png" alt="Aoife O'Neill">
+      <div class="member-name">Aoife O'Neill</div>
+      <div class="member-role">4th Year Project Student</div>
+      <div class="member-dates">2024-25</div>
+    </div>
+
+    <!-- Cian Loughlin -->
+    <div class="member-profile">
+      <img src="images/formerpng/Cian.png" alt="Cian Loughlin">
+      <div class="member-name">Cian Loughlin</div>
+      <div class="member-role">4th Year Project Student</div>
+      <div class="member-dates">2024-25</div>
+    </div>
+
+    <!-- Connor Barrett -->
+    <div class="member-profile">
+      <img src="images/formerpng/Connor.png" alt="Connor Barrett">
+      <div class="member-name">Connor Barrett</div>
+      <div class="member-role">4th Year Project Student</div>
+      <div class="member-dates">2024-25</div>
+    </div>
+  </div>
+
+  <footer class="bottom-bar">
+    &copy; 2025 Molecular Design Group
+  </footer>
+
+  <script>
+    // Slide-in effect for member profiles
+    document.addEventListener("DOMContentLoaded", function () {
+      const profiles = document.querySelectorAll('.member-profile');
+
+      const config = { threshold: 0.18 };
+
+      function revealProfile(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(revealProfile, config);
+
+      profiles.forEach(profile => observer.observe(profile));
+    });
+  </script>
+</body>
+
+</html>

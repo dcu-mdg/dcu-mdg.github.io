@@ -1,1 +1,1 @@
-The intended webpage for the DCU Molecule Design Group
+The intended webpage for the DCU Molecular Design Group
